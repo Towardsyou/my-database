@@ -14,7 +14,7 @@ async fn main() {
         )
         .init();
 
-    let app: Router = web::route::get_router();
+    let app: Router = web::route::get_router().await;
 
     let listener = tokio::net::TcpListener::bind("127.0.0.1:3000")
         .await

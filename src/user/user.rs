@@ -2,14 +2,14 @@ use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use sqlx::prelude::FromRow;
 
-#[derive(sqlx::Type, Debug, Serialize, Deserialize)]
+#[derive(sqlx::Type, Debug, Serialize, Deserialize, PartialEq, Eq)]
 #[sqlx(rename_all = "lowercase")]
 pub enum UserRole {
     Admin,
     User,
 }
 
-#[derive(sqlx::Type, Debug, Serialize, Deserialize)]
+#[derive(sqlx::Type, Debug, Serialize, Deserialize, PartialEq, Eq)]
 pub enum UserStatus {
     #[sqlx(rename = "active")]
     Active,
